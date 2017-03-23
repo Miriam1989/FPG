@@ -1,3 +1,4 @@
+
 # Built application files
 *.apk
 *.ap_
@@ -16,6 +17,10 @@ out/
 # Gradle files
 .gradle/
 build/
+gradlew
+gradlew.*
+gradle/*
+
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -35,6 +40,13 @@ captures/
 # Intellij
 *.iml
 .idea/workspace.xml
+.idea
+.idea/libraries
 
 # Keystore files
 *.jks
+
+# library files
+/.idea/libraries
+/.idea/*.xml
+/.idea/*.name
