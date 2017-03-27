@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/blue_bg_color"
     android:orientation="vertical"
-    tools:context="com.fpg.fpg.SplashActivity">
+    tools:context="com.fpg.fpg.ui.onBoarding.ScreenSlideActivity$SplashActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

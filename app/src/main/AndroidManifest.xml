@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fpg.fpg">
 
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="17" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,14 +11,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".SplashActivity">
+        <activity android:name=".ui.onBoarding.ScreenSlideActivity$SplashActivity">
+
+        </activity>
+
+        <activity android:name=".ui.home.MainActivity">
+
+        </activity>
+
+        <activity android:name=".ui.onBoarding.ScreenSlideActivity"
+            android:label="@string/title_screen_slide"
+            android:parentActivityName=".ui.home.MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.home.MainActivity" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
