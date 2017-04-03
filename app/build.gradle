@@ -30,5 +30,6 @@ dependencies {
     compile 'com.tuyenmonkey:mkloader:1.0.0'
     compile 'com.android.support:support-v13:25.3.0'
     testCompile 'junit:junit:4.12'
+    compile 'com.github.satyan:sugar:1.5'
 
 }
