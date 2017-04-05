@@ -22,7 +22,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fpg.fpg.R;
+import com.fpg.fpg.models.OnBoarding;
+import com.fpg.fpg.services.OnBoardingServices;
 import com.fpg.fpg.utils.Utils;
+
+import java.util.List;
 
 /**
  * Created by jhovany on 31/03/17.
@@ -30,23 +34,34 @@ import com.fpg.fpg.utils.Utils;
 
 public class PagerActivity extends AppCompatActivity {
 
-    SectionsPagerAdapter mSectionsPagerAdapter;
+    //<editor-fold des=" * * * * *  I N T E R N A L  V A R I A B L E  * * * * * ">
+    List<OnBoarding> listView;
 
+    //</editor-fold>
+    // <editor-fold des=" * * * * *  U I V A R I A B L E  * * * * * ">
+    private ImageView zero, one, two, three, four, five, six;
+    private ImageView zeroRectangle, oneRectangle, twoRectangle, threeRectangle, fourRectangle, fiveRectangle, sixRectangle;
+    private ImageView[] indicators;
+    private ImageView[] indicatorRectangles;
+    private ImageButton mNextBtn;
+    private Button mSkipBtn, mFinishBtn;
     private ViewPager mViewPager;
-    ImageButton mNextBtn;
-    Button mSkipBtn, mFinishBtn;
+    private CoordinatorLayout mCoordinator;
+    //</editor-fold>
 
-    ImageView zero, one, two, three, four, five, six;
-    ImageView zeroRectangle, oneRectangle, twoRectangle, threeRectangle, fourRectangle, fiveRectangle, sixRectangle;
-    ImageView[] indicators;
-    ImageView[] indicatorRectangles;
+
+    //<editor-fold des=" * * * * *  I N I T I A L I Z E   S E R V I C E S * * * * * ">
+    OnBoardingServices onBoardingServices = new OnBoardingServices();
+    //</editor-fold>
+
+
+    //<editor-fold des=" * * * * *   A D A P T E R S   * * * * * ">
+    SectionsPagerAdapter mSectionsPagerAdapter;
+    //</editor-fold>
+
 
     int lastLeftValue = 0;
 
-    CoordinatorLayout mCoordinator;
-
-
-    static final String TAG = "PagerActivity";
 
     int page = 0;   //  to track page position
 
@@ -65,8 +80,8 @@ public class PagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pager);
 
 
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
+//<editor-fold des=" * * * * *   U I  R E F E R E N C E S  * * * * * ">
+
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         mNextBtn = (ImageButton) findViewById(R.id.intro_btn_next);
@@ -92,12 +107,17 @@ public class PagerActivity extends AppCompatActivity {
         threeRectangle = (ImageView) findViewById(R.id.progress_3);
         fourRectangle = (ImageView) findViewById(R.id.progress_4);
         fiveRectangle = (ImageView) findViewById(R.id.progress_5);
-
         mCoordinator = (CoordinatorLayout) findViewById(R.id.main_content);
 
+        //</editor-fold>
 
+        //<editor-fold des=" * * * * *  I N I T I A L I Z E   E L E M E N T S * * * * * ">
+        listView = onBoardingServices.getView();
         indicators = new ImageView[]{zero, one, two, three, four, five, six};
         indicatorRectangles = new ImageView[]{zeroRectangle, oneRectangle, twoRectangle, threeRectangle, fourRectangle, fiveRectangle, sixRectangle};
+
+        //</editor-fold>
+
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
