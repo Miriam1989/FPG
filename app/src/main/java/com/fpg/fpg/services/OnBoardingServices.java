@@ -16,14 +16,17 @@ public class OnBoardingServices {
 
         OnBoarding itemDance = new OnBoarding();
         itemDance.setBoardingName("Danza");
-        itemDance.setBoardDescription("Descripción");
+        itemDance.setBoardDescription(
+                "Es un lenguaje expresivo, que se vale de movimientos corporales cargados de emoción para expresar y comunicar, generalmente es acompañada de música. Los movimientos están guiados por una energía específica distinta en cada situacioón y llevan una musucalidad y ritmo que le da orden al movimiento.");
         itemDance.setBoardImage("0B6xyiWpZ8iAFN2dSVFJld1JjVHM");
         itemDance.setBoardCircleColor("#d71860"); //#d71860  //#890b4f
         itemDance.setBoardingOrder(1);
 
         OnBoarding itemMusic = new OnBoarding();
         itemMusic.setBoardingName("Música");
-        itemMusic.setBoardDescription("Descripción");
+        itemMusic.setBoardDescription("" +
+                "Se encuentra en el marco del desarrollo psicomotriz del niño, por lo tanto es determinante para elaborar cualquier " +
+                "planteamiento educativo musical, se enriquecen a partir del movimiento, desde la escucha activa a través del cuerpo, los juegos con posiciones, la construcción de instrumentos, etc.");
         itemMusic.setBoardImage("0B6xyiWpZ8iAFZDlaRU5DV25EbEE");
         itemMusic.setBoardCircleColor("#3848a8"); //#3848a8 //#1a227c
         itemMusic.setBoardingOrder(2);

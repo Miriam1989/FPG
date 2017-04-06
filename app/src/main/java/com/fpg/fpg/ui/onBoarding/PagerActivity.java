@@ -28,6 +28,7 @@ import com.fpg.fpg.R;
 import com.fpg.fpg.models.OnBoarding;
 import com.fpg.fpg.services.OnBoardingServices;
 import com.fpg.fpg.utils.Constants;
+import com.fpg.fpg.utils.Fonts;
 import com.fpg.fpg.utils.Utils;
 
 import java.util.List;
@@ -329,15 +330,19 @@ public class PagerActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_pager, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            TextView type = (TextView) rootView.findViewById(R.id.section_label);
+            type.setTypeface(Fonts.getFontRoboto(getContext(), Constants.ConstanTypeFont.ROBOTO_MEDIUM));
+
+            TextView mDescription = (TextView) rootView.findViewById(R.id.tv_description);
+            mDescription.setTypeface(Fonts.getFontRoboto(getContext(), Constants.ConstanTypeFont.OPENSANS_REGULAR));
 
             int positionPager = (getArguments().getInt(ARG_SECTION_NUMBER) - 1);
             img = (ImageView) rootView.findViewById(R.id.section_img);
 
 
             Glide.with(this).load(Constants.GoogleDrive.DRIVE_IMAGE_ROUTE + listView.get(positionPager).getBoardImage()).into(img);
-            textView.setText(listView.get(positionPager).getBoardingName());
-
+            type.setText(listView.get(positionPager).getBoardingName());
+            mDescription.setText(listView.get(positionPager).getBoardDescription());
 
             return rootView;
         }
