@@ -7,12 +7,29 @@
     android:background="@color/colorWhite"
     tools:context=".ui.onBoarding.PagerActivity">
 
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/container"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="?attr/actionBarSize" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/rectangule"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+        android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@+id/rectangule"
+            android:layout_marginTop="-200dp"
+            android:layout_marginLeft="-50dp"
+            android:layout_marginRight="-50dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_circle" />
+    </LinearLayout>
 
 
     <View
@@ -192,7 +209,6 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:background="@drawable/indicator_unselected" />
-
             </LinearLayout>
 
         </RelativeLayout>
@@ -219,6 +235,12 @@
 
 
     </FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="?attr/actionBarSize" />
 
 
 </android.support.design.widget.CoordinatorLayout>

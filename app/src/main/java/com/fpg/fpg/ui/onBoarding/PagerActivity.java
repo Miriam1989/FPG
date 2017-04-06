@@ -2,6 +2,8 @@ package com.fpg.fpg.ui.onBoarding;
 
 import android.animation.ArgbEvaluator;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -21,9 +23,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.fpg.fpg.R;
 import com.fpg.fpg.models.OnBoarding;
 import com.fpg.fpg.services.OnBoardingServices;
+import com.fpg.fpg.utils.Constants;
 import com.fpg.fpg.utils.Utils;
 
 import java.util.List;
@@ -34,19 +38,30 @@ import java.util.List;
 
 public class PagerActivity extends AppCompatActivity {
 
+    String var = "http://drive.google.com/uc?export=view&id=";
     //<editor-fold des=" * * * * *  I N T E R N A L  V A R I A B L E  * * * * * ">
-    List<OnBoarding> listView;
+    static List<OnBoarding> listView;
+    public float fraction;
+
+    public float getFraction() {
+        return fraction;
+    }
+
+    public void setFraction(float fraction) {
+        this.fraction = fraction;
+    }
 
     //</editor-fold>
     // <editor-fold des=" * * * * *  U I V A R I A B L E  * * * * * ">
     private ImageView zero, one, two, three, four, five, six;
-    private ImageView zeroRectangle, oneRectangle, twoRectangle, threeRectangle, fourRectangle, fiveRectangle, sixRectangle;
+    private ImageView zeroRectangle, oneRectangle, twoRectangle, threeRectangle, fourRectangle, fiveRectangle, sixRectangle, glide;
     private ImageView[] indicators;
     private ImageView[] indicatorRectangles;
     private ImageButton mNextBtn;
     private Button mSkipBtn, mFinishBtn;
     private ViewPager mViewPager;
     private CoordinatorLayout mCoordinator;
+    private ImageView circle;
     //</editor-fold>
 
 
@@ -108,7 +123,7 @@ public class PagerActivity extends AppCompatActivity {
         fourRectangle = (ImageView) findViewById(R.id.progress_4);
         fiveRectangle = (ImageView) findViewById(R.id.progress_5);
         mCoordinator = (CoordinatorLayout) findViewById(R.id.main_content);
-
+        circle = (ImageView) findViewById(R.id.imageView);
         //</editor-fold>
 
         //<editor-fold des=" * * * * *  I N I T I A L I Z E   E L E M E N T S * * * * * ">
@@ -123,29 +138,30 @@ public class PagerActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+
         mViewPager.setCurrentItem(page);
         updateIndicators(page);
 
-        final int color1 = ContextCompat.getColor(this, R.color.colorWhite);
-        final int color2 = ContextCompat.getColor(this, R.color.colorWhite);
-        final int color3 = ContextCompat.getColor(this, R.color.colorWhite);
-        final int color4 = ContextCompat.getColor(this, R.color.colorWhite);
-        final int color5 = ContextCompat.getColor(this, R.color.colorWhite);
-        final int color6 = ContextCompat.getColor(this, R.color.colorWhite);
+        final int color1 = Color.parseColor(listView.get(0).getBoardCircleColor());
+        final int color2 = Color.parseColor(listView.get(1).getBoardCircleColor());
+        final int color3 = Color.parseColor(listView.get(2).getBoardCircleColor());
+        final int color4 = Color.parseColor(listView.get(3).getBoardCircleColor());
+        final int color5 = Color.parseColor(listView.get(4).getBoardCircleColor());
+        final int color6 = Color.parseColor(listView.get(5).getBoardCircleColor());
+        final int color7 = Color.parseColor(listView.get(6).getBoardCircleColor());
 
-        final int[] colorList = new int[]{color1, color2, color3, color4, color5, color6};
+        final int[] colorList = new int[]{color1, color2, color3, color4, color5, color6, color7};
 
         final ArgbEvaluator evaluator = new ArgbEvaluator();
-
+        final Drawable circlee = ContextCompat.getDrawable(this, R.drawable.ic_circle);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-                /*
-                color update
-                 */
-                //   int colorUpdate = (Integer) evaluator.evaluate(positionOffset, colorList[position], colorList[position == 2 ? position : position + 1]);
-                // mViewPager.setBackgroundColor(colorUpdate);
+                int colorUpdate = (Integer) evaluator.evaluate(positionOffset, colorList[position], colorList[position == 6 ? position : position + 1]);
+
+                circlee.setColorFilter(colorUpdate, PorterDuff.Mode.SRC_ATOP);
+                circle.setBackground(circlee);
 
             }
 
@@ -155,7 +171,7 @@ public class PagerActivity extends AppCompatActivity {
                 page = position;
 
                 updateIndicators(page);
-
+/*
                 switch (position) {
                     case 0:
                         mViewPager.setBackgroundColor(color1);
@@ -180,7 +196,7 @@ public class PagerActivity extends AppCompatActivity {
                         break;
                 }
 
-
+*/
                 mNextBtn.setVisibility(position == 2 ? View.GONE : View.VISIBLE);
                 mFinishBtn.setVisibility(position == 2 ? View.VISIBLE : View.GONE);
 
@@ -226,9 +242,6 @@ public class PagerActivity extends AppCompatActivity {
             indicators[i].setBackgroundResource(
                     i <= position ? R.drawable.indicator_selected : R.drawable.indicator_unselected);
 
-            //indicatorRectangles[i].setBackgroundResource(paintBars(i, position, indicatorRectangles.length));
-
-
         }
     }
 
@@ -255,44 +268,8 @@ public class PagerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    public static class PlaceholderFragment extends Fragment {
-
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        ImageView img;
-
-        int[] bgs = new int[]{R.mipmap.ic_dance, R.mipmap.ic_music, R.mipmap.ic_english, R.mipmap.ic_swimming, R.mipmap.ic_human_formation, R.mipmap.ic_human_values, R.mipmap.ic_transport};
-
-        public PlaceholderFragment() {
-        }
-
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_pager, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            textView.setText("Danza");
-
-            img = (ImageView) rootView.findViewById(R.id.section_img);
-            img.setBackgroundResource(bgs[getArguments().getInt(ARG_SECTION_NUMBER) - 1]);
-
-            return rootView;
-        }
-
-    }
-
-
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
+        private PlaceholderFragment placeholderFragment;
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -302,9 +279,11 @@ public class PagerActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            placeholderFragment = PlaceholderFragment.newInstance(position + 1);
+            return placeholderFragment;
 
         }
+
 
         @Override
         public int getCount() {
@@ -323,6 +302,44 @@ public class PagerActivity extends AppCompatActivity {
                     return "SECTION 3";
             }
             return null;
+        }
+
+    }
+
+
+    public static class PlaceholderFragment extends Fragment {
+
+        public static PlaceholderFragment newInstance(int sectionNumber) {
+            PlaceholderFragment fragment = new PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        private static final String ARG_SECTION_NUMBER = "section_number";
+        final ArgbEvaluator evaluator = new ArgbEvaluator();
+        ImageView img;
+
+        public PlaceholderFragment() {
+
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_pager, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+
+            int positionPager = (getArguments().getInt(ARG_SECTION_NUMBER) - 1);
+            img = (ImageView) rootView.findViewById(R.id.section_img);
+
+
+            Glide.with(this).load(Constants.GoogleDrive.DRIVE_IMAGE_ROUTE + listView.get(positionPager).getBoardImage()).into(img);
+            textView.setText(listView.get(positionPager).getBoardingName());
+
+
+            return rootView;
         }
 
     }

@@ -17,50 +17,50 @@ public class OnBoardingServices {
         OnBoarding itemDance = new OnBoarding();
         itemDance.setBoardingName("Danza");
         itemDance.setBoardDescription("Descripción");
-        itemDance.setBoardImage(null);
-        itemDance.setBoardCircleColor("");
+        itemDance.setBoardImage("0B6xyiWpZ8iAFN2dSVFJld1JjVHM");
+        itemDance.setBoardCircleColor("#d71860"); //#d71860  //#890b4f
         itemDance.setBoardingOrder(1);
 
         OnBoarding itemMusic = new OnBoarding();
         itemMusic.setBoardingName("Música");
         itemMusic.setBoardDescription("Descripción");
-        itemMusic.setBoardImage(null);
-        itemMusic.setBoardCircleColor("");
+        itemMusic.setBoardImage("0B6xyiWpZ8iAFZDlaRU5DV25EbEE");
+        itemMusic.setBoardCircleColor("#3848a8"); //#3848a8 //#1a227c
         itemMusic.setBoardingOrder(2);
 
         OnBoarding itemEnglish = new OnBoarding();
         itemEnglish.setBoardingName("Ingles");
         itemEnglish.setBoardDescription("Descripción");
-        itemEnglish.setBoardImage(null);
-        itemEnglish.setBoardCircleColor("");
+        itemEnglish.setBoardImage("0B6xyiWpZ8iAFTTdiRmpxWFhmRUU");
+        itemEnglish.setBoardCircleColor("#5e35b1"); //5e35b1  //311b92
         itemEnglish.setBoardingOrder(3);
 
         OnBoarding itemSwimming = new OnBoarding();
-        itemSwimming.setBoardingName("Natacióm");
+        itemSwimming.setBoardingName("Natación");
         itemSwimming.setBoardDescription("Descripción");
-        itemSwimming.setBoardImage(null);
-        itemSwimming.setBoardCircleColor("");
+        itemSwimming.setBoardImage("0B6xyiWpZ8iAFalBFaE5mVnFVUXc");
+        itemSwimming.setBoardCircleColor("#61b4f5"); //#61b4f5  //#2494f0
         itemSwimming.setBoardingOrder(4);
 
         OnBoarding itemHumanFormation = new OnBoarding();
         itemHumanFormation.setBoardingName("Formación Humana");
         itemHumanFormation.setBoardDescription("Descripción");
-        itemHumanFormation.setBoardImage(null);
-        itemHumanFormation.setBoardCircleColor("");
+        itemHumanFormation.setBoardImage("0B6xyiWpZ8iAFclJIMmh1Q25yYmc");
+        itemHumanFormation.setBoardCircleColor("#ed6b03"); //#ed6b03  //#f88c01
         itemHumanFormation.setBoardingOrder(5);
 
         OnBoarding itemHumanValues = new OnBoarding();
         itemHumanValues.setBoardingName("Valores Humanos");
         itemHumanValues.setBoardDescription("Descripción");
-        itemHumanValues.setBoardImage(null);
-        itemHumanValues.setBoardCircleColor("");
+        itemHumanValues.setBoardImage("0B6xyiWpZ8iAFUHRPMUZJSHRqekE");
+        itemHumanValues.setBoardCircleColor("#d71760"); //#d71760
         itemHumanValues.setBoardingOrder(6);
 
         OnBoarding itemTransport = new OnBoarding();
         itemTransport.setBoardingName("Transporte");
         itemTransport.setBoardDescription("Descripción");
-        itemTransport.setBoardImage(null);
-        itemTransport.setBoardCircleColor("");
+        itemTransport.setBoardImage("0B6xyiWpZ8iAFQnRpQWtXWmVGTVk");
+        itemTransport.setBoardCircleColor("#ad0807"); //#ad0807   //#8f0403
         itemTransport.setBoardingOrder(7);
 
         listItems.add(itemDance);
