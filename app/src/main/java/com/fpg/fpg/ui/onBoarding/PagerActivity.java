@@ -39,7 +39,6 @@ import java.util.List;
 
 public class PagerActivity extends AppCompatActivity {
 
-    String var = "http://drive.google.com/uc?export=view&id=";
     //<editor-fold des=" * * * * *  I N T E R N A L  V A R I A B L E  * * * * * ">
     static List<OnBoarding> listView;
     public float fraction;
@@ -242,7 +241,18 @@ public class PagerActivity extends AppCompatActivity {
         for (int i = 0; i < indicators.length; i++) {
             indicators[i].setBackgroundResource(
                     i <= position ? R.drawable.indicator_selected : R.drawable.indicator_unselected);
+        }
 
+        for (int i = 0; i < indicatorRectangles.length - 1; i++) {
+            if (position == 0) {
+                indicatorRectangles[i].setBackgroundResource(R.drawable.ic_rectangle_unselected);
+            } else if (position <= indicators.length - 1) {
+                if (i < position) {
+                    indicatorRectangles[i].setBackgroundResource(R.drawable.ic_rectangle_selected);
+                } else {
+                    indicatorRectangles[i].setBackgroundResource(R.drawable.ic_rectangle_unselected);
+                }
+            }
         }
     }
 

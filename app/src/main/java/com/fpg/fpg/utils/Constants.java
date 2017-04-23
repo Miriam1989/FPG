@@ -25,4 +25,19 @@ public class Constants {
     }
 
 
+    public static class Host {
+        public static final String HOME_PATH = "http://tes000development.000webhostapp.com";
+        public static final String HOME_SCRIPTS = "/scripts";
+
+    }
+
+    public static class Section {
+        public static final String ONBOARGING = "/onboarding";
+    }
+
+    public static class Script {
+        public static final String JSON_ONBOARDING = "/onBoarding.json";
+    }
+
+
 }
