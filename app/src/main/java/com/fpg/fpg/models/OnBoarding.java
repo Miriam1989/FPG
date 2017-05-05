@@ -12,7 +12,7 @@ public class OnBoarding extends SugarRecord {
     private String BoardDescription;
     private String BoardImage;
     private String BoardCircleColor;
-    private int BoardingOrder;
+    private Long BoardingOrder;
 
     public OnBoarding() {
     }
@@ -49,11 +49,11 @@ public class OnBoarding extends SugarRecord {
         BoardCircleColor = boardCircleColor;
     }
 
-    public int getBoardingOrder() {
+    public Long getBoardingOrder() {
         return BoardingOrder;
     }
 
-    public void setBoardingOrder(int boardingOrder) {
+    public void setBoardingOrder(Long boardingOrder) {
         BoardingOrder = boardingOrder;
     }
 }

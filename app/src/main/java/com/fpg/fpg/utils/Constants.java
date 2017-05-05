@@ -33,10 +33,18 @@ public class Constants {
 
     public static class Section {
         public static final String ONBOARGING = "/onboarding";
+        public static final String CARD = "/card";
+        public static final String NEWS = "/news";
+        public static final String DATE = "/date";
+        public static final String GROUP_NEWS = "/groupNews";
     }
 
     public static class Script {
         public static final String JSON_ONBOARDING = "/onBoarding.json";
+        public static final String JSON_TYPE_CARD = "/typeCard.json";
+        public static final String JSON_DATE_NEWS = "/dateNews.json";
+        public static final String JSON_GROUP_NEWS = "/groupNews.json";
+        public static final String JSON_NEWS = "/news.json";
     }
 
 

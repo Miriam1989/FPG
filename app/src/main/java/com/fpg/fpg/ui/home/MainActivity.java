@@ -8,6 +8,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,8 +17,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.fpg.fpg.R;
+import com.fpg.fpg.adapters.ListHeaderNewsAdapter;
+import com.fpg.fpg.models.GroupNews;
+import com.fpg.fpg.models.News;
 import com.fpg.fpg.models.OnBoarding;
 import com.fpg.fpg.ws.fpgServices;
+import com.orm.query.Condition;
+import com.orm.query.Select;
 
 import java.util.List;
 
@@ -26,6 +33,10 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private RecyclerView mRecyclerView;
+    private ListHeaderNewsAdapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +76,7 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+        initRecyclerView();
     }
 
     @Override
@@ -122,5 +134,24 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void initRecyclerView() {
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_headerNews);
+
+        mRecyclerView.setHasFixedSize(true);
+
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        List<GroupNews> groupNewsList = Select.from(GroupNews.class).list();
+
+        for (GroupNews groupNews : groupNewsList) {
+
+            groupNews.setNews(Select.from(News.class).where(Condition.prop("GROUP_NEWS").eq(groupNews.getRemoteId())).list());
+        }
+
+        mAdapter = new ListHeaderNewsAdapter(groupNewsList, getApplicationContext());
+        mRecyclerView.setAdapter(mAdapter);
     }
 }
