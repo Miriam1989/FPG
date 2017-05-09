@@ -33,13 +33,13 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center|left"
                 android:layout_marginLeft="-30dp"
+                android:background="@color/colorPrimary"
                 android:fontFamily="sans-serif"
                 android:paddingLeft="0dp"
                 android:rotation="-90"
                 android:text="MIERCOLES"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:background="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="normal|bold"
                 tools:layout_editor_absoluteX="8dp" />
@@ -97,11 +97,14 @@
                     app:layout_constraintVertical_bias="0.83" />
 
                 <TextView
-                    android:id="@+id/tv_more_v2"
+                    android:id="@+id/tv_more"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="mas..."
-                    android:textSize="12sp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="+1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintHorizontal_bias="0.98"
@@ -132,6 +135,7 @@
                         android:layout_height="wrap_content"
                         android:text="-Celebracion de los maestr@s"
                         android:textColor="#706969"
+                        android:textStyle="bold"
                         android:visibility="gone" />
 
                     <TextView
@@ -140,6 +144,7 @@
                         android:layout_height="wrap_content"
                         android:text="-Aplicación de Examenes"
                         android:textColor="#c4c4c4"
+                        android:textStyle="bold"
                         android:visibility="gone" />
 
                     <TextView
@@ -148,6 +153,7 @@
                         android:layout_height="wrap_content"
                         android:text="-Ultimo dia de Pago de Colegiatura"
                         android:textColor="#706969"
+                        android:textStyle="bold"
                         android:visibility="gone" />
 
                     <TextView
@@ -156,6 +162,7 @@
                         android:layout_height="wrap_content"
                         android:text="-Escuela de padres"
                         android:textColor="#c4c4c4"
+                        android:textStyle="bold"
                         android:visibility="gone" />
                 </LinearLayout>
             </android.support.constraint.ConstraintLayout>
