@@ -16,6 +16,7 @@ public class NewsWS extends SugarRecord {
     private Long date;
     private Long order;
     private Long remoteId;
+    private Long remoteIdTypeCard;
 
     public NewsWS() {
     }
@@ -82,5 +83,13 @@ public class NewsWS extends SugarRecord {
 
     public void setRemoteId(Long remoteId) {
         this.remoteId = remoteId;
+    }
+
+    public Long getRemoteIdTypeCard() {
+        return remoteIdTypeCard;
+    }
+
+    public void setRemoteIdTypeCard(Long remoteIdTypeCard) {
+        this.remoteIdTypeCard = remoteIdTypeCard;
     }
 }

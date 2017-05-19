@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3481b6</color>
-    <color name="colorPrimaryDark">#2e74a4</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#0091ea</color>
+    <color name="colorPrimaryDark">#0064b7</color>
+
+    <color name="colorAccent">#d81b60</color>
+
+
     <color name="colorPrimarySplash">#40bcff</color>
     <color name="colorSecondSplash">#1477ac</color>
     <color name="colorWhite">#FFFFFF</color>
@@ -15,4 +18,6 @@
     <color name="indicator_selected">#154fb0</color>
     <color name="green">#4CAF50</color>
     <color name="orange">#FF9800</color>
+
+    <color name="colorMenuCheckedTrue">#0091ea</color>
 </resources>

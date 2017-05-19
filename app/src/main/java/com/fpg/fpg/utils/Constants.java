@@ -26,8 +26,10 @@ public class Constants {
 
 
     public static class Host {
-        public static final String HOME_PATH = "http://tes000development.000webhostapp.com";
-        public static final String HOME_SCRIPTS = "/scripts";
+        //public static final String HOME_PATH = "http://tes000development.000webhostapp.com";
+        //public static final String HOME_SCRIPTS = "/scripts";
+        public static final String HOME_PATH = "https://raw.githubusercontent.com";
+        public static final String HOME_SCRIPTS = "/JhovanyOlvera/000/develop/scripts";
 
     }
 
@@ -47,5 +49,7 @@ public class Constants {
         public static final String JSON_NEWS = "/news.json";
     }
 
-
+    public static class Group {
+        public static final String GROUP_NEWS = "Grupo de noticia";
+    }
 }

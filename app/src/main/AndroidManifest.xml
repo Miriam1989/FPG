@@ -33,10 +33,7 @@
             android:value="com.fpg.fpg.models" />
 
         <activity android:name=".ui.onBoarding.SplashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
 
         </activity>
 
@@ -44,20 +41,27 @@
             android:name=".ui.onBoarding.PagerActivity"
             android:label="pager"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-
         </activity>
+
         <activity
             android:name=".ui.home.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
+
         <activity
             android:name=".ui.details.DetailNews"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
-
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.home.MainActivity"/>
         </activity>
+
     </application>
 
 </manifest>

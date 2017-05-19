@@ -17,6 +17,7 @@ public class News extends SugarRecord {
     private Long orderItem;
     private GroupNews groupNews;
     private DateNews dateNews;
+    private TypeCard typeCard;
 
 
     public News() {
@@ -94,5 +95,13 @@ public class News extends SugarRecord {
 
     public void setDateNews(DateNews dateNews) {
         this.dateNews = dateNews;
+    }
+
+    public TypeCard getTypeCard() {
+        return typeCard;
+    }
+
+    public void setTypeCard(TypeCard typeCard) {
+        this.typeCard = typeCard;
     }
 }

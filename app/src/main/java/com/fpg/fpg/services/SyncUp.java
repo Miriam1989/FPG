@@ -194,6 +194,12 @@ public class SyncUp {
                     newsElement.setDescription(newsWS.getDescription());
                     newsElement.setOrderItem(newsWS.getOrder());
 
+                    TypeCard typeCard = Select.from(TypeCard.class).where(Condition.prop("REMOTE_ID").eq(newsWS.getRemoteIdTypeCard())).first();
+
+                    if (typeCard != null) {
+                        newsElement.setTypeCard(typeCard);
+                    }
+
                     GroupNews groupNews = Select.from(GroupNews.class).where(Condition.prop("REMOTE_ID").eq(newsWS.getRemoteGroupId())).first();
                     if (groupNews != null) {
                         newsElement.setGroupNews(groupNews);

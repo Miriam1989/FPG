@@ -1,35 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        >
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_section_1"
+            android:icon="@drawable/ic_activity_v1"
+            android:title="section 1"
+            android:visible="false"/>
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_section_2"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="section 2"
+            android:visible="false"/>
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_section_3"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="section 3"
+            android:visible="false"/>
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_section_4"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="section 4"
+            android:visible="false"/>
+        <item
+            android:id="@+id/nav_section_5"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="section 5"
+            android:visible="false"/>
     </group>
 
-    <item android:title="Communicate">
+    <item
+        android:id="@+id/div_divisor"
+        android:title="Communicate"
+        android:visible="false"
+        >
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_divisor_section1"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="divisor section 1"
+                android:visible="false"/>
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_divisor_section2"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="divisor section 2"
+                android:visible="false"/>
+            <item
+                android:id="@+id/nav_divisor_section3"
+                android:icon="@drawable/ic_menu_send"
+                android:title="divisor section 3"
+                android:visible="false"/>
         </menu>
     </item>
 
