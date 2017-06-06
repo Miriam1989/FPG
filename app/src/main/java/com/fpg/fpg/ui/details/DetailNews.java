@@ -25,19 +25,22 @@ public class DetailNews extends AppCompatActivity {
     private NewsServices newsServices;
     private RecyclerView mRecyclerView;
     private ListDetailNewsAdapter mAdapter;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitle("");
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         initServices();
         initBundle();
         initRecyclerView();
+        initToolbar();
 
+    }
+
+    private void initServices() {
+        newsServices = new NewsServices();
     }
 
     private void initBundle() {
@@ -50,8 +53,13 @@ public class DetailNews extends AppCompatActivity {
         }
     }
 
-    private void initServices() {
-        newsServices = new NewsServices();
+    private void initToolbar() {
+
+        toolbar.setTitle(newsServices.getDateBar(valor));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
     }
 
     private void initRecyclerView() {
