@@ -7,7 +7,7 @@
     android:background="@drawable/wallpaper"
     android:orientation="vertical"
     tools:context="com.fpg.fpg.ui.onBoarding.SplashActivity">
-    <!--android:background="@drawable/blue_bg_color"-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,41 +18,46 @@
         android:paddingTop="100dp">
 
         <ImageView
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_width="143dp"
-            android:layout_height="160dp"
-            android:background="@drawable/ic_logo"
-            android:scaleType="fitXY"
-            android:layout_gravity="center" />
+            android:layout_width="@dimen/size_logo"
+            android:layout_height="@dimen/size_logo"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_button_logo"
+            android:background="@drawable/ic_escudo"
+            android:scaleType="fitXY" />
 
         <TextView
+            android:id="@+id/tv_preescolar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Colegio"
-            android:textColor="#fecb00"
             android:gravity="center"
-            android:textSize="18dp"
-            android:fontFamily="serif" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="FRAY PEDRO DE GANTE"
-            android:textColor="@color/colorWhite"
-            android:gravity="center"
-            android:textSize="18dp"
+            android:text="PREESCOLAR"
+            android:textColor="@color/text_color_font_1"
+            android:textSize="@dimen/text_size_preescolar"
             android:textStyle="normal|bold" />
 
-        <!--<com.tuyenmonkey.mkloader.MKLoader
-            android:layout_width="50dp"
+
+        <TextView
+            android:id="@+id/tv_primaria"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            app:mk_color="@color/colorWhite"
-            app:mk_type="Worm"
-            android:layout_gravity="center" />
-          -->
+            android:layout_marginTop="-10dp"
+            android:gravity="center"
+            android:text="PRIMARIA"
+            android:textColor="@color/text_color_font_2"
+            android:textSize="@dimen/text_size_primaria"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/tv_secundaria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:gravity="center"
+            android:text="SECUNDARIA"
+            android:textColor="@color/text_color_font_1"
+            android:textSize="@dimen/text_size_secundaria"
+            android:textStyle="normal|bold" />
+
     </LinearLayout>
 
 </LinearLayout>

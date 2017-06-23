@@ -20,4 +20,9 @@
     <color name="orange">#FF9800</color>
 
     <color name="colorMenuCheckedTrue">#0091ea</color>
+
+    <!-- SPLASH ACTIVITY-->
+    <color name="text_color_font_1">#e5eaf7</color>
+    <color name="text_color_font_2">#0091ea</color>
+
 </resources>
