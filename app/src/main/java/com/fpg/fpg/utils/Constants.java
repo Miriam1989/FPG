@@ -15,6 +15,7 @@ public class Constants {
         public static final String ROBOTO_MEDIUM = "Font/Roboto/Roboto-Medium.ttf";
         public static final String ROBOTO_LIGHT = "Font/Roboto/Roboto-Light.ttf";
         public static final String OPENSANS_REGULAR = "Font/OpenSans/OpenSans-Regular.ttf";
+        public static final String DOSIS_BOLD = "Font/Dosis/Dosis-Bold.ttf";
     }
 
     public static class ConstanTypeFont {
@@ -22,6 +23,7 @@ public class Constants {
         public static final String ROBOTO_MEDIUM = "ROBOTO_MEDIUM";
         public static final String ROBOTO_LIGHT = "ROBOTO_LIGHT";
         public static final String OPENSANS_REGULAR = "OPENSANS_REGULAR";
+        public static final String DOSIS_BOLD = "DOSIS_BOLD";
     }
 
 

@@ -5,7 +5,7 @@
                 android:id="@+id/content_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#dadada"
+    android:background="#fafafa"
                 android:paddingBottom="0dp"
                 android:paddingTop="0dp"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"

@@ -6,12 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import com.fpg.fpg.R;
 import com.fpg.fpg.adapters.ListDetailNewsAdapter;
 import com.fpg.fpg.models.News;
 import com.fpg.fpg.services.NewsServices;
 import com.fpg.fpg.utils.Constants;
+import com.fpg.fpg.utils.Fonts;
 
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class DetailNews extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private ListDetailNewsAdapter mAdapter;
     private Toolbar toolbar;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +57,11 @@ public class DetailNews extends AppCompatActivity {
     }
 
     private void initToolbar() {
+        title = (TextView) findViewById(R.id.title);
+        title.setText(newsServices.getDateBar(valor));
+        title.setTypeface(Fonts.getFontRoboto(this, Constants.ConstanTypeFont.DOSIS_BOLD));
 
-        toolbar.setTitle(newsServices.getDateBar(valor));
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

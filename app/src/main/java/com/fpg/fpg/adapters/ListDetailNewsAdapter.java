@@ -16,6 +16,7 @@ import com.fpg.fpg.utils.Constants;
 
 import java.util.List;
 
+
 /**
  * Created by jhovany on 27/03/17.
  */
@@ -74,6 +75,8 @@ public class ListDetailNewsAdapter extends RecyclerView.Adapter<ListDetailNewsAd
                 iv_banner.setLayoutParams(layout);
                 Glide.with(context).load(R.drawable.ic_place_holder).into(iv_banner);
             } else {
+
+
                 Glide.with(context)
                         .load(Constants.GoogleDrive.DRIVE_IMAGE_ROUTE + news.getImage())
                         .placeholder(R.drawable.ic_place_holder)

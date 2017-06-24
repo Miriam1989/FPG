@@ -24,6 +24,7 @@
     <dimen name="size_logo">160dp</dimen>
     <dimen name="margin_button_logo">20dp</dimen>
     <dimen name="text_size_preescolar">35dp</dimen>
-    <dimen name="text_size_primaria">45dp</dimen>
+    <dimen name="text_size_primaria">50dp</dimen>
     <dimen name="text_size_secundaria">35dp</dimen>
+    <dimen name="size_indicator">12dp</dimen>
 </resources>

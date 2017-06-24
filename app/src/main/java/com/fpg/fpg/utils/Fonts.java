@@ -14,6 +14,10 @@ public class Fonts {
         switch (font) {
             case Constants.ConstanTypeFont.ROBOTO_BOLD:
                 return Typeface.createFromAsset(context.getAssets(), Constants.TypeFonts.ROBOTO_BOLD);
+
+            case Constants.ConstanTypeFont.DOSIS_BOLD:
+                return Typeface.createFromAsset(context.getAssets(), Constants.TypeFonts.DOSIS_BOLD);
+
             default:
                 return null;
         }

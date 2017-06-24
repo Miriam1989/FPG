@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0091ea</color>
+    <color name="colorPrimaryz">#0091ea</color>
+    <color name="colorPrimary">#0064b7</color>
     <color name="colorPrimaryDark">#0064b7</color>
+
 
     <color name="colorAccent">#d81b60</color>
 
@@ -12,17 +14,27 @@
     <color name="colorBlack">#000000</color>
 
     <color name="black_trans80">#33000000</color>
+
     <color name="cyan">#00BCD4</color>
 
-    <color name="indicator_unselected">#f2f1f3</color>
-    <color name="indicator_selected">#154fb0</color>
+
     <color name="green">#4CAF50</color>
     <color name="orange">#FF9800</color>
 
     <color name="colorMenuCheckedTrue">#0091ea</color>
 
-    <!-- SPLASH ACTIVITY-->
+    <!--    S P L A S H   A C T I V I T Y    -->
     <color name="text_color_font_1">#e5eaf7</color>
     <color name="text_color_font_2">#0091ea</color>
+
+
+    <!--    O N B O A R D I N G      -->
+    <color name="backgroud_button_continue">#f5f5f5</color>
+    <color name="colorRipple">#8ab5db</color>
+    <color name="button_text_continue">#145ab2</color>
+    <color name="indicator_unselected">#b8daf9</color>
+    <color name="indicator_selected">#0c3b65</color>
+
+    <color name="color_header_section">#0c3b65</color>
 
 </resources>

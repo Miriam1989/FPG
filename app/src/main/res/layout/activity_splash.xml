@@ -4,7 +4,7 @@
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper"
+    android:background="@drawable/wallpaper_blue"
     android:orientation="vertical"
     tools:context="com.fpg.fpg.ui.onBoarding.SplashActivity">
 
@@ -40,7 +40,7 @@
             android:id="@+id/tv_primaria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-10dp"
+            android:layout_marginTop="-15dp"
             android:gravity="center"
             android:text="PRIMARIA"
             android:textColor="@color/text_color_font_2"
@@ -51,7 +51,7 @@
             android:id="@+id/tv_secundaria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-10dp"
+            android:layout_marginTop="-15dp"
             android:gravity="center"
             android:text="SECUNDARIA"
             android:textColor="@color/text_color_font_1"

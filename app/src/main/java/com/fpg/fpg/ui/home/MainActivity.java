@@ -20,7 +20,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
@@ -31,6 +30,7 @@ import com.fpg.fpg.models.GroupNews;
 import com.fpg.fpg.models.News;
 import com.fpg.fpg.models.OnBoarding;
 import com.fpg.fpg.utils.Constants;
+import com.fpg.fpg.utils.Fonts;
 import com.fpg.fpg.ws.fpgServices;
 import com.orm.query.Condition;
 import com.orm.query.Select;
@@ -48,13 +48,15 @@ public class MainActivity extends AppCompatActivity
     private ListHeaderNewsAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private GroupCallbacks mGroupCallbacks;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Actividades");
+        toolbar.setTitle("");
+
         setSupportActionBar(toolbar);
 
         mGroupCallbacks = this;
@@ -83,11 +85,15 @@ public class MainActivity extends AppCompatActivity
         mi.setVisible(true);
         mi.setTitle("Actividades");
 
+        title = (TextView) findViewById(R.id.title);
+        title.setText("Actividades");
+        title.setTypeface(Fonts.getFontRoboto(this, Constants.ConstanTypeFont.DOSIS_BOLD));
+
         final TextView tv_title = (TextView) navigationView.getHeaderView(0).findViewById(R.id.tv_title);
         final TextView tv_subtitle = (TextView) navigationView.getHeaderView(0).findViewById(R.id.tv_subtitle);
         final ImageView iv = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.iv_profile);
 
-        Glide.with(this).load(R.drawable.ic_logo).asBitmap().centerCrop().into(new BitmapImageViewTarget(iv) {
+        Glide.with(this).load(R.drawable.ic_escudo).asBitmap().centerCrop().into(new BitmapImageViewTarget(iv) {
 
             @Override
             protected void setResource(Bitmap resource) {
@@ -103,7 +109,6 @@ public class MainActivity extends AppCompatActivity
         fpgServices.getServices().index().enqueue(new Callback<List<OnBoarding>>() {
             @Override
             public void onResponse(Call<List<OnBoarding>> call, Response<List<OnBoarding>> response) {
-                Toast.makeText(MainActivity.this, "true", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -127,7 +132,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        // getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
