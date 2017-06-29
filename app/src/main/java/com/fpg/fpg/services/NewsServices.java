@@ -34,6 +34,6 @@ public class NewsServices {
         } else {
             day = dateNews.getStartDay() + " al " + dateNews.getFinishDay() ;
         }
-        return day +" "+ StringUtils.capitalize(dateNews.getMonth().toLowerCase());
+        return day +" de "+ StringUtils.capitalize(dateNews.getMonth().toLowerCase());
     }
 }

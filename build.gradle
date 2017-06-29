@@ -33,4 +33,5 @@ ext {
     glide = "3.8.0"
     junit = "4.12"
     sugar = "1.5"
+    lottie = "2.0.0"
 }

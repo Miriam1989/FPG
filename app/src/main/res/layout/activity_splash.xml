@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,38 +26,14 @@
             android:background="@drawable/ic_escudo"
             android:scaleType="fitXY" />
 
-        <TextView
-            android:id="@+id/tv_preescolar"
-            android:layout_width="match_parent"
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="PREESCOLAR"
-            android:textColor="@color/text_color_font_1"
-            android:textSize="@dimen/text_size_preescolar"
-            android:textStyle="normal|bold" />
-
-
-        <TextView
-            android:id="@+id/tv_primaria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-15dp"
-            android:gravity="center"
-            android:text="PRIMARIA"
-            android:textColor="@color/text_color_font_2"
-            android:textSize="@dimen/text_size_primaria"
-            android:textStyle="normal|bold" />
-
-        <TextView
-            android:id="@+id/tv_secundaria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-15dp"
-            android:gravity="center"
-            android:text="SECUNDARIA"
-            android:textColor="@color/text_color_font_1"
-            android:textSize="@dimen/text_size_secundaria"
-            android:textStyle="normal|bold" />
+            android:layout_marginTop="-40dp"
+            app:lottie_fileName="Splash/title.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 

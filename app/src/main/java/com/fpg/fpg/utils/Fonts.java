@@ -18,6 +18,9 @@ public class Fonts {
             case Constants.ConstanTypeFont.DOSIS_BOLD:
                 return Typeface.createFromAsset(context.getAssets(), Constants.TypeFonts.DOSIS_BOLD);
 
+            case Constants.ConstanTypeFont.DOSIS_MEDIUM:
+                return Typeface.createFromAsset(context.getAssets(), Constants.TypeFonts.DOSIS_MEDIUM);
+
             default:
                 return null;
         }

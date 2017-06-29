@@ -19,12 +19,6 @@ import butterknife.ButterKnife;
 public class SplashActivity extends AppCompatActivity {
 
     //<editor-fold des=" * * * * *  U I    R E F E R E N C E S  * * * * * ">
-    @BindView(R.id.tv_preescolar)
-    TextView tvPreescolar;
-    @BindView(R.id.tv_primaria)
-    TextView tvPrimaria;
-    @BindView(R.id.tv_secundaria)
-    TextView tvSecundaria;
     @BindView(R.id.activity_splash)
     LinearLayout activitySplash;
     //</editor-fold>
@@ -48,10 +42,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void setFont() {
-        tvPreescolar.setTypeface(Fonts.getFontRoboto(this, Constants.ConstanTypeFont.DOSIS_BOLD));
-        tvPrimaria.setTypeface(Fonts.getFontRoboto(this, Constants.ConstanTypeFont.DOSIS_BOLD));
-        tvSecundaria.setTypeface(Fonts.getFontRoboto(this, Constants.ConstanTypeFont.DOSIS_BOLD));
-    }
+        }
 
     private void waitChange() {
         handler.postDelayed(new Runnable() {

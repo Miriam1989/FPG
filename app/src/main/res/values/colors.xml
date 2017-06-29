@@ -37,4 +37,9 @@
 
     <color name="color_header_section">#0c3b65</color>
 
+
+    <!--       D E T A I L S      -->
+    <color name="color_details_description">#d7a6a6a6</color>
+
+
 </resources>
